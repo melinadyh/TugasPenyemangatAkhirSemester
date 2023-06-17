@@ -1,10 +1,8 @@
-// Kelas utama untuk program pemesanan kamar kos
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class PemesananKamarKos {
-    //STATIC MODIFIER DAN KONSTANTA FINALKIA
+    //STATIC MODIFIER DAN KONSTANTA FINAL
 
     private static final ArrayList<String> KAMAR_TERSEDIA_FASILITAS_1;
     private static final ArrayList<String> KAMAR_TERSEDIA_FASILITAS_2;
@@ -13,16 +11,16 @@ public class PemesananKamarKos {
     static {
         // Inisialisasi kamar kos tersedia
         KAMAR_TERSEDIA_FASILITAS_1 = new ArrayList<>();
-        KAMAR_TERSEDIA_FASILITAS_1.add("Anggrek 1");
-        KAMAR_TERSEDIA_FASILITAS_1.add("Anggrek 2");
-        KAMAR_TERSEDIA_FASILITAS_1.add("Dahlia 1");
-        KAMAR_TERSEDIA_FASILITAS_1.add("Dahlia 3");
-        KAMAR_TERSEDIA_FASILITAS_1.add("Bougenville 1");
+        KAMAR_TERSEDIA_FASILITAS_1.add("Kamar Anggrek 1");
+        KAMAR_TERSEDIA_FASILITAS_1.add("Kamar Anggrek 2");
+        KAMAR_TERSEDIA_FASILITAS_1.add("Kamar Dahlia 1");
+        KAMAR_TERSEDIA_FASILITAS_1.add("Kamar Dahlia 3");
+        KAMAR_TERSEDIA_FASILITAS_1.add("Kamar Bougenville 1");
 
         KAMAR_TERSEDIA_FASILITAS_2 = new ArrayList<>();
-        KAMAR_TERSEDIA_FASILITAS_2.add("Anggrek 6");
-        KAMAR_TERSEDIA_FASILITAS_2.add("Dahlia 5");
-        KAMAR_TERSEDIA_FASILITAS_2.add("Bougenville 7");
+        KAMAR_TERSEDIA_FASILITAS_2.add("Kamar Anggrek 6");
+        KAMAR_TERSEDIA_FASILITAS_2.add("Kamar Dahlia 5");
+        KAMAR_TERSEDIA_FASILITAS_2.add("Kamar Bougenville 7");
 
         DAFTAR_PEMESANAN = new ArrayList<>();
     }
@@ -32,7 +30,7 @@ public class PemesananKamarKos {
 
         while (true) {
             System.out.println("===== SELAMAT DATANG DI KOST PUTRI MERPATI =====");
-            System.out.print("Nama pemesan: ");
+            System.out.print("Nama Pemesan: ");
             String nama = scanner.nextLine();
             System.out.print("Alamat: ");
             String alamat = scanner.nextLine();
@@ -43,7 +41,7 @@ public class PemesananKamarKos {
             Pemesanan pemesanan = new Pemesanan(nama, alamat, nomorHP);
 
             // Tampilkan fasilitas kamar yang tersedia
-            System.out.println("Tampilkan fasilitas kamar yang tersedia:");
+            System.out.println("Tampilkan Fasilitas Kamar yang Tersedia:");
             System.out.println("1. Fasilitas 1:");
             FasilitasKamar fasilitas1 = new KamarMandiDalam();
             fasilitas1.tampilkanInfo();
@@ -55,7 +53,7 @@ public class PemesananKamarKos {
             System.out.println("3. Exit");
             System.out.println();
 
-            System.out.print("Masukkan fasilitas kamar yang diinginkan: ");
+            System.out.print("Pilih Fasilitas Kamar yang Diinginkan: ");
             System.out.println();
             int pilihanFasilitas = scanner.nextInt();
             scanner.nextLine();
@@ -82,12 +80,12 @@ public class PemesananKamarKos {
                 kamarTersedia = KAMAR_TERSEDIA_FASILITAS_2;
             }
 
-            System.out.println("Kamar yang tersedia untuk Fasilitas " + pilihanFasilitas + ":");
+            System.out.println("Kamar Yang Tersedia Untuk Fasilitas " + pilihanFasilitas + ":");
             for (int i = 0; i < kamarTersedia.size(); i++) {
                 System.out.println((i + 1) + ". " + kamarTersedia.get(i));
             }
 
-            System.out.print("Masukkan nomor kamar yang tersedia: ");
+            System.out.print("Masukkan Nomor Kamar Yang Tersedia: ");
             int nomorKamar = scanner.nextInt();
             scanner.nextLine();
             System.out.println();
@@ -110,7 +108,7 @@ public class PemesananKamarKos {
         }
     }
 
-    // Overloading
+    // OVERLOADING
     public void tampilkanInfo() {
         System.out.println("Tidak ada informasi yang tersedia");
     }
